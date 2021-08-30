@@ -1,26 +1,32 @@
-// import firebase from 'firebase/app';
-// import 'firebase/firestore';
-// import 'firebase/auth';
-import { initializeApp } from "firebase/app";
+  
+// import firebase from 'firebase';
+//  import 'firebase/firestore';
+//  import 'firebase/auth';
+//  import firebase from "firebase/app";
+//  import 'firebase/firestore';
+// import "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
-const config = {
-  apiKey: 'AIzaSyCdHT-AYHXjF7wOrfAchX4PIm3cSj5tn14',
-  authDomain: 'crwn-db.firebaseapp.com',
-  databaseURL: 'https://crwn-db.firebaseio.com',
-  projectId: 'crwn-db',
-  storageBucket: 'crwn-db.appspot.com',
-  messagingSenderId: '850995411664',
-  appId: '1:850995411664:web:7ddc01d597846f65'
-};
+import { initializeApp } from 'firebase/app';
+ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
+const config =  {
+  apiKey: "AIzaSyCahI4FPIelR0a89_PdFvZ3MrREmbFf4l8",
+  authDomain: "awesome-c1473.firebaseapp.com",
+  projectId: "awesome-c1473",
+  storageBucket: "awesome-c1473.appspot.com",
+  messagingSenderId: "276199347744",
+  appId: "1:276199347744:web:b9832053dc42fd48330e45",
+  measurementId: "G-5NPT6BXCTN"
+};
 const app = initializeApp(config);
+
+//firebase.initializeApp(config);
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
-  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const userRef = firestore.doc(`user/${userAuth.uid}`);
 
   const snapShot = await userRef.get();
 
